@@ -1,10 +1,4 @@
-FROM ubuntu:latest
-
-RUN apt-get update
-RUN apt-get install nginx
-
-COPY index.html /var/www/html/index.html
-
-EXPOSE 80
-
-CMD ["nginx", "-g", "daemon off;"]
+FROM python:3.9
+WORKDIR .
+COPY hello.py .
+CMD ["python", "hello.py"]
